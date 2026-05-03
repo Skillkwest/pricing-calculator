@@ -36,25 +36,6 @@ export type Settings = {
   conversion_rate: number;
 };
 
-export type CatalogPresetModel = {
-  provider: string;
-  name: string;
-  spec_label: string;
-  base_unit: number;
-  base_cost: number;
-  markup_pct: number;
-  sort_order: number;
-};
-
-export type CatalogPreset = {
-  id: string;
-  name: string;
-  description: string;
-  conversion_rate: number;
-  models: CatalogPresetModel[];
-  created_at: string;
-};
-
 export const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL,
   import.meta.env.VITE_SUPABASE_ANON_KEY
