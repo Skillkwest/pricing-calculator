@@ -3,6 +3,7 @@ import { Calculator, Plus } from 'lucide-react';
 import { supabase, type Model, type Plan, type Settings } from './lib/supabase';
 import ModelTable from './components/ModelTable';
 import PlanSimulator from './components/PlanSimulator';
+import CatalogPresets from './components/CatalogPresets';
 
 export default function App() {
   const [settings, setSettings] = useState<Settings>({ id: 1, conversion_rate: 30 });
@@ -76,6 +77,8 @@ export default function App() {
           onChange={load}
           onSettingsChange={updateConversionRate}
         />
+
+        <CatalogPresets onRestored={load} />
 
         <div>
           <div className="flex items-center justify-between mb-4">
